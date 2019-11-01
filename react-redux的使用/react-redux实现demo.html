@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>react-redux的实现demo</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    .sectionA {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 98vw;
+      min-height: 40vh;
+      background:cornflowerblue;
+      text-align: center;
+    }
+    .ipTitle {
+      color: #c42917
+    }
+    img {
+      max-height: 150px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+    <sction class="sectionA">
+      <h1>实现方法：</h1>
+      <div class="ipTitle">
+          <h2>前提：项目入口文件中引入reducer,创建store,添加provider</h2>
+        </div>
+
+      <div>
+        <h2>1. 定义action：可以新建一个action.js文件或者随便什么名字，名字不重要，只要export的符合规范就行</h2>
+        <a target="_blank" rel="noopener noreferrer"  href="./定义action.png">
+          <img title='点击查看大图' src="./定义action.png"/>
+        </a>
+      </div>
+
+      <div>
+        <h2>2. 定义action的处理逻辑reducer：可以新建一个reducer.js文件或者随便什么名字，可以单独新建文件，也可以与action在同一个文件，不重要</h2>
+        <h2>reducer会返回一个全局state,可以在全局任何地方使用</h2>
+        <a target="_blank" rel="noopener noreferrer"  href="./action的执行操作reducer.png">
+          <img title='点击查看大图' src="./action的执行操作reducer.png"/>
+        </a>
+      </div>
+
+      <div>
+        <h2>3. 定义好了，就该使用了，在需要使用数据的地方引入react-redux，connect组件与store, 解构数据，通过props使用；在需要修改全局store中state的地方，引入react-redux,connect组件与store,解构纯函数，在需要修改的地方使用props传入参数</h2>
+        <a target="_blank" rel="noopener noreferrer"  href="./使用state1.png">
+          <img title='点击查看大图' src="./使用state1.png"/>
+        </a>
+        <a target="_blank" rel="noopener noreferrer"  href="./使用state3.png">
+          <img title='点击查看大图' src="./使用state3.png"/>
+        </a>
+        <a target="_blank" rel="noopener noreferrer"  href="./使用state2.png">
+          <img title='点击查看大图' src="./使用state2.png"/>
+        </a>
+      </div>
+
+      <div>
+        <h2>4. 通过dispatch修改state</h2>
+        <a target="_blank" rel="noopener noreferrer"  href="./修改state00.png">
+          <img title='点击查看大图' src="./修改state00.png"/>
+        </a>
+        <a target="_blank" rel="noopener noreferrer"  href="./修改state01.png">
+          <img title='点击查看大图' src="./修改state01.png"/>
+        </a>
+        <a target="_blank" rel="noopener noreferrer"  href="./修改state02.png">
+          <img title='点击查看大图' src="./修改state02.png"/>
+        </a>
+      </div>
+    </sction>
+</body>
+</html>
