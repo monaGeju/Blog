@@ -43,14 +43,14 @@
       </div>
 
       <div>
-        <h2>1. 定义action：可以新建一个action.js文件或者随便什么名字，名字不重要，只要export的符合规范就行</h2>
+        <h2>1. 定义action，返回一个type用以区分各个不同的action,type值必须唯一，reducer通过type来判断执行哪一个action：可以新建一个action.js文件或者随便什么名字，名字不重要，只要export的符合规范就行</h2>
         <a target="_blank" rel="noopener noreferrer"  href="./定义action.png">
           <img title='点击查看大图' src="./定义action.png"/>
         </a>
       </div>
 
       <div>
-        <h2>2. 定义action的处理逻辑reducer：可以新建一个reducer.js文件或者随便什么名字，可以单独新建文件，也可以与action在同一个文件，不重要</h2>
+        <h2>2. 定义action的处理逻辑reducer, 用以响应action, reducer本质是一个函数，接收两个参数，一个参数preState,一个action;preState表示store中的state,它可以是一个键值对，可以是数组，可以是对象，类型不限；reducer函数返回一个值：可以新建一个reducer.js文件或者随便什么名字，可以单独新建文件，也可以与action在同一个文件，不重要</h2>
         <h2>reducer会返回一个全局state,可以在全局任何地方使用</h2>
         <a target="_blank" rel="noopener noreferrer"  href="./action的执行操作reducer.png">
           <img title='点击查看大图' src="./action的执行操作reducer.png"/>

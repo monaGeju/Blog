@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <style>
+    *{
+      background: #FFF;
+      font-size: 24px !important;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    body{
+      padding: 0 350px;
+      padding-bottom: 100px;
+    }
+    code{
+      background: #FFF !important;
+    }
+  </style>
+</head>
+
+<body class="nodata ">
+  <div class="main_father clearfix d-flex justify-content-center" style="height:100%;">
+    <div class="container clearfix" id="mainBox">
+      <div class='space_container'></div>
+        <main>
+          <div class="blog-content-box">
+            <article class="baidu_pl">
+              <div id="article_content" class="article_content clearfix">
+                <center><h1>标题：react-redux使用方法步骤</h1></center>
+                <h2>新建文件夹redux,内部包含action.js、reducer.js、store.js三个JS文件</h2>
+                <div id="content_views" class="markdown_views prism-atom-one-dark">
+
+                  <p>1.写action (在redux下的action写)</p>
+                <pre class="prettyprint"><code class=" hljs coffeescript"><span class="hljs-reserved">export</span> <span class="hljs-reserved">const</span> saveBookResult = data<span class="hljs-function"> =&gt;</span> ({
+  <span class="hljs-attribute">type</span>: <span class="hljs-string">'saveBookResult'</span>,
+  payload:data
+})
+
+<span class="hljs-reserved">export</span> <span class="hljs-reserved">const</span> saveUserInfo = data<span class="hljs-function"> =&gt;</span> ({
+  <span class="hljs-attribute">type</span>: <span class="hljs-string">'saveUserInfo'</span>,
+  payload: data
+})</code></pre>
+
+                <p>2.写reducer</p>
+
+
+                
+                <pre class="prettyprint">
+                  <code class=" hljs">import initialState from './store'</code>
+                  <code class=" hljs coffeescript"><span class="hljs-reserved">export</span> <span class="hljs-function"><span class="hljs-title">default</span> <span class="hljs-params">(state =initialState, action)</span> =&gt;</span> {
+  <span class="hljs-keyword">switch</span> (action.type) {
+    <span class="hljs-reserved">case</span> <span class="hljs-string">'do1'</span>:
+      <span class="hljs-keyword">return</span> {
+          <span class="hljs-attribute">user</span>: action.data,
+      }
+    <span class="hljs-reserved">case</span> <span class="hljs-string">'do2'</span>:
+
+    <span class="hljs-attribute">default</span>:
+      <span class="hljs-keyword">return</span> state
+  }
+}
+
+<span class="hljs-reserved"></pre>
+
+                <p>3.写store （createStore的第二个参数可以写全局的初始化的state，我一开始纠结了特别久到底在哪里可以写初始的公共的state）</p>
+
+
+
+                <pre class="prettyprint"><code class=" hljs coffeescript"><span class="hljs-reserved">import</span> { createStore } from <span class="hljs-string">'redux'</span>
+<span class="hljs-reserved">import</span> rootReducer from <span class="hljs-string">'./reducers'</span>
+ <span class="hljs-reserved">const</span> store = createStore(rootReducer,{
+    <span class="hljs-attribute">user</span>:<span class="hljs-string">"admin"</span>,
+    <span class="hljs-attribute">icon</span>:<span class="hljs-string">"icon"</span>
+ })
+<span class="hljs-reserved">export</span> <span class="hljs-reserved">default</span> store</code></pre>
+
+                <p>4.在组件中运用 <br>
+                  开头部分：</p>
+
+
+
+                <pre
+                  class="prettyprint"><code class=" hljs python">关联redux和当前组件
+<span class="hljs-keyword">import</span> { connect } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-redux'</span>
+引入要用的action
+<span class="hljs-keyword">import</span> { func1} <span class="hljs-keyword">from</span> <span class="hljs-string">'../../store/actions'</span></code></pre>
+
+                <p>结尾部分</p>
+
+
+
+                <pre class="prettyprint"><code class=" hljs coffeescript"><span class="hljs-reserved">const</span> mapStateToProps = state<span class="hljs-function"> =&gt;</span> {
+  <span class="hljs-keyword">return</span> {
+    <span class="hljs-attribute">user</span>: state.user
+  }
+}
+
+<span class="hljs-reserved">const</span> mapDispatchToProps = dispatch<span class="hljs-function"> =&gt;</span> {
+  <span class="hljs-keyword">return</span> {
+    <span class="hljs-attribute">doing</span>: text<span class="hljs-function"> =&gt;</span> {
+      dispatch(func1(text))
+    }
+  }
+} 
+<span class="hljs-reserved">export</span> 
+<span class="hljs-reserved">default</span> connect(mapStateToProps,mapDispatchToProps)(Index)</code></pre>
+
+                <p>函数触发 reducer <br>
+                  上一段代码中mapStateToProps，mapDispatchToProps就是把store中本组件需要的state,reducer中的执行函数放到this.props中， <br>
+                  此时this.props如下图：</p>
+
+                <p><img
+                    src="https://img-blog.csdn.net/20180727153239200?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3BrMTQyNTM2/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70"
+                    alt="这里写图片描述" title=""> <br>
+                  你在组件中就可以用了，this.props.doing(“内容”)； <br>
+                  然后 this.props.user就等于“内容”； <br>
+                  当然，如果没有mapDispatchToProps，
+            <img
+              src="https://img-blog.csdn.net/20180727153657460?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3BrMTQyNTM2/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70"
+              alt="这里写图片描述" title=""> <br>
+            就这样用this.props.dispatch(func1(“内容”))也可以的</p>
+              </div>
+              <link href="https://csdnimg.cn/release/phoenix/mdeditor/markdown_views-e9f16cbbc2.css" rel="stylesheet">
+            </div>
+          </article>
+        </div>
+
+      </main>
+    </div>
+  </div>
+</body>
+
+</html>
