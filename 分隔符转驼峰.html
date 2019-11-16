@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>css分隔符写法转驼峰写法</title>
+</head>
+<body>
+    <script>
+      // 第一种写法---循环替换
+      var str="border-bottom-color-my-url";
+      
+      function replceStr (target, sym){
+
+        if (target.includes(sym)){
+          
+          var finalStr = ''
+          var tempArr = target.split(sym)
+          for(let i = 1; i<tempArr.length; i++ ) {
+
+            tempArr[i] = tempArr[i][0].toLocaleUpperCase() + tempArr[i].substring(1)
+          }
+          return finalStr =tempArr.join('') 
+        } else {
+
+          return '目标中不含指定字符'
+        }
+      }
+
+      console.log('循环替换法',replceStr(str, '-'))
+    </script>
+
+    <script>
+      //第二种写法--正则匹配替换
+      var str = "border-bottom-color-my-url";
+
+      function replceStr (targetStr) {
+
+        var reg = /-(\w)/g
+        var res = targetStr.replace(reg, function($0,$1) {
+          return $1.toLocaleUpperCase()
+        })
+
+        // 需要注意的是replace的第二个参数可以是字符串，也可以是函数，函数的参数$具有特殊意义，
+        // 它代表每一个regexp匹配到的项中从左到右的元素
+        return res
+      }
+
+      console.log('正则匹配法', replceStr(str))
+    </script>
+</body>
+</html>

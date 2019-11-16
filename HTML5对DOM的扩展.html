@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML5对DOM的扩展</title>
+  <style>
+    body{
+      margin: 0 25vw;
+    }
+    .markClass {
+      color: red;
+      font-weight: 600;
+      background:coral;
+    }
+    #button {
+      text-align: center;
+      background: #fdf;
+      line-height: 36px;
+    }
+  </style>
+</head>
+<body>
+  <div class="markClass target">
+    <h1>我是目标</h1>
+  </div>
+  <h2 id="button">切换按钮（原生js实现toggle效果）</h2>
+
+  <h1></h1>
+  <h2>HTML5对DOM的扩展</h2>
+  <h3>1、document/element.getElementsByClassName()</h3>
+  <h3>2、document/element.classList.add(value)/remove(value)/toggle(value)/contains(value)</h3>
+  <h3>3、document.activeElement、 element.hasFocus()、element.focus()</h3>
+  <h3>4、文档渲染的阶段：document.readystate = laoding /complete</h3>
+  <h3>5、判别浏览器模式：document.compatMode </h3>
+  <h3>6、允许直接访问文档的head元素：var head = document.head || document.getElementsByTagName("head")[0];</h3>
+  <h3>7、增加字符集属性：document.charset</h3>
+  <h3>8、自定义的data属性：element.dataset.mydata</h3>
+  <h3>9、访问innerHTML属性 element.innerHTML</h3>
+  <h3>10、</h3>
+
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    var targetEl = document.querySelector('.target')
+
+    $(document).on('click','#button',function(){
+      targetEl.classList.toggle('markClass')
+    })
+  </script>
+</body>
+</html>
