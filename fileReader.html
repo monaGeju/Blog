@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>fileReader</title>
+</head>
+<body>
+  <input type='file' name="上传文件" onchange="handleFileChange(this.files)" />
+  <div>
+    <img id="showTarget" src="" alt="" />
+  </div>
+  <script>
+    const theId = document.getElementById('showTarget')
+    handleFileChange = fileList => {
+
+      console.log(fileList)
+
+      if (fileList.length>0){
+
+        let reader =new FileReader()
+
+        reader.readAsDataURL(fileList[0])
+
+        reader.onload= async e  =>{
+
+          const base64 = e.target.result
+          theId.src=base64
+          console.log(base64)
+        }
+      }
+    }
+  </script>
+</body>
+</html>

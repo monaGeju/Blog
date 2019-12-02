@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>stopPropagation与stopImediatePropagation的区别</title>
+</head>
+<body>
+    <button type="button" id="targetBtn">点击按钮</button>
+    <script>
+      // stopPropagation会先执行完当前元素身上绑定的所有事件后，再阻止其他的事件
+      // stopImmediate会阻止绑定在currentTarget元素身上正在执行的事件之后的事件和后续所有事件
+      var targetBtn = document.getElementById('targetBtn')
+      targetBtn.addEventListener('click', function(e){
+        console.log('冒泡阶段，第11111111次执行')
+        // e.stopPropagation()
+        e.stopImmediatePropagation()
+      }, true)
+      targetBtn.addEventListener('click', function(){
+        console.log('冒泡阶段，第222222次执行')
+      }, true)
+      targetBtn.addEventListener('click', function(){
+        console.log('冒泡阶段，第3333333次执行')
+      }, true)
+    </script>
+</body>
+</html>
