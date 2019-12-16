@@ -9,7 +9,7 @@
 <body>
     <script>
     
-    judgeAgent()
+    console.log(judgeAgent().browser, judgeAgent().engine)
 
     function judgeAgent () {
       var engine = {
@@ -79,7 +79,7 @@
           engine.ie = browser.ie = parseFloat(engine.ver);
         }
 
-      console.log(engine, browser)
+      // console.log(engine, browser)
     // 返回结果
       return {
         engine: engine,

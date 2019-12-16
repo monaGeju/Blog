@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>js从网页获取用户GPS定位</title>
+</head>
+<body> 
+    <h1>主要通过原生的js:navigator.geolocation.getCurrentPosition()实现定位</h1>
+    <div>
+      您当前的经纬度为：
+      <span id="target"></span>
+    </div>
+
+    <script>
+      var target = document.getElementById('target')
+      // 获取经纬度会受到通信协议及项目网址类型（线上、本地IP）影响
+      window.onload = function () {
+
+        navigator.geolocation.getCurrentPosition(async res => {
+
+          const { latitude, longitude } = res.coords
+
+          target.innerHTML=`经度：${latitude}, 纬度：${latitude}`
+        },
+        error => { 
+
+          console.log(error)
+          target.innerHTML=`错误：${error.message}`
+        }
+      )
+      }
+    </script>
+</body>
+</html>

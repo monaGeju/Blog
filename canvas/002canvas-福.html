@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>01canvas-福.html</title>
+  <style>
+    body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+      background: url('../img/start.gif')
+    }
+    #canvas00, #canvas01{
+      border: 5px solid orange;
+      border-radius: 4px;
+      margin-top: 120px;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas00" width="650" height="700"></canvas>
+  <script>
+    var canvas00 = document.getElementById('canvas00')
+
+    if (canvas00.getContext) { // 检验浏览器是否支持H5特性canvas
+
+      var context = canvas00.getContext('2d') // 获取元素上下文
+      context.strokeStyle = "red" // 规定 描边用红色
+      context.fillStyle = "red" // 规定 填充 用蓝色
+      context.fillRect(0, 0 ,650, 700) // 绘制矩形 x坐标 100 ， y坐标 100，宽 100， 高 100
+
+      // 切掉一块
+      context.clearRect(130, 100, 30, 30)
+      context.clearRect(60, 150, 200, 30)
+      context.clearRect(130, 220, 30, 350)
+      context.clearRect(60, 300, 30, 90)
+      context.clearRect(220, 300, 30, 90)
+
+      context.clearRect(350, 150, 180, 30) 
+      context.clearRect(365, 220, 150, 30) 
+      context.clearRect(335, 220, 30, 100)
+      context.clearRect(365, 290, 150, 30)
+      context.clearRect(515, 220, 30, 100)
+
+
+      context.clearRect(300, 370, 260, 30)
+      context.clearRect(300, 520, 250, 30)
+      context.clearRect(300, 445, 250, 30)
+      context.clearRect(550, 370, 30, 180)
+      context.clearRect(300, 370, 30, 180)
+      context.clearRect(430, 370, 30, 180)
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>自定义纯CSS实现优惠券</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    .couponWrap {
+      margin: 30vh 30vw;
+      width: 706px;
+      height: 150px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      background-size: 16px 16px;
+      background-position: 9px 3px;
+      background-image: radial-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 5px, #F39B00 5px);
+      position: relative;
+    }
+    
+    .couponLeft {
+      width: 70%;
+      height: 100%;
+      padding-left: 10%;
+      border-right:2px dashed #ddd;
+      overflow: hidden;
+    }
+    .couponLeft:before {
+        content:'';
+        position: absolute;
+        left: 10px;
+        top: 5px;
+        right: 10px;
+        bottom: 5px;
+        background-color:#F39B00;
+        z-index: -1;
+    }
+    .couponRight {
+      width: 30%;
+      padding-left: 10%;
+      height: 100%;
+      position: relative;
+    }
+    .couponLeft:before {
+      content:'';
+      position: absolute;
+      left: 10px;
+      top: 5px;
+      right: 10px;
+      bottom: 5px;
+      background-color:#F39B00;
+      z-index: -1;
+    }
+    .couponRight:before{
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #FFF;
+      border-radius: 20px;
+      left: -12px;
+      top: -8px;
+      z-index: 1;
+    }
+    .couponRight:after{
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #FFF;
+      border-radius: 20px;
+      left: -12px;
+      bottom: -8px;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="couponWrap">
+    <div class="couponLeft">
+      <h1>左侧</h1>
+    </div>
+    <div class="couponRight">
+        <h1>右侧</h1>
+    </div>
+  </div>
+</body>
+</html>

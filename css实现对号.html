@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>css实现对号</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('./img/start.gif')
+    }
+    .wrap{
+      margin: 40vh 48vw;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border-width: 0 0 5px 5px;
+      background: rgb(1, 153, 255);
+      position: relative;
+    }
+    .wrap:after{
+      content: "\0020";
+      position: absolute;
+      top: 8px;
+      left: 20px;
+      z-index: 999;
+      width: 10px;
+      height: 20px;
+      border-style: solid;
+      color: #FFF;
+      font-weight: 600;
+      border-width: 0 1.5px 1.5px 0;
+      transform: rotate(45deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap"></div>
+</body>
+</html>

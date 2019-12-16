@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>00canvas.html</title>
+  <style>
+    body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+    }
+    #canvas00, #canvas01{
+      border: 5px solid orange;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas00" width="300" height="300"></canvas>
+  <canvas id="canvas01" width="300" height="300"></canvas>
+  <script>
+    var canvas00 = document.getElementById('canvas00')
+
+    if (canvas00.getContext) { // 检验浏览器是否支持H5特性canvas
+
+      var context = canvas00.getContext('2d') // 获取元素上下文
+      context.strokeStyle = "red" // 规定 描边用红色
+      context.fillStyle = "#7ee7ff" // 规定 填充 用蓝色
+      context.fillRect(30, 40 ,240, 220) // 绘制矩形 x坐标 30 ， y坐标 40，宽 240， 高 220
+
+
+      context.strokeStyle = "red" // 规定 描边用红色
+      context.fillStyle = "black" // 规定 填充 用蓝色
+      context.fillRect(100, 100 ,100, 100) // 绘制矩形 x坐标 100 ， y坐标 100，宽 100， 高 100
+
+      // 切掉一块
+      context.clearRect(130, 130, 30, 30)
+    }
+
+
+    // 另一个canvas
+    var canvas01 = document.getElementById('canvas01')
+
+    if (canvas01.getContext) { // 检验浏览器是否支持H5特性canvas
+
+      var context = canvas01.getContext('2d') // 获取元素上下文
+      context.strokeStyle = "red" // 规定 描边用红色
+      context.strokeRect(30, 40 ,150, 150) // 绘制矩形 x坐标 30 ， y坐标 40，宽 240， 高 220
+
+
+      context.strokeStyle = "red" // 规定 描边用红色
+      context.strokeRect(100, 110 ,120, 120) // 绘制矩形 x坐标 100 ， y坐标 100，宽 100， 高 100
+    }
+  </script>
+</body>
+</html>
