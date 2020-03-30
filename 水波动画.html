@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>水波动画</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .page {
+      height: 100vh;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      background: #4affff;
+    }
+
+    .mask1 {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      background: red;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+    }
+
+
+    .mask1::before {
+      position: absolute;
+      content: '';
+      animation: scale 2s ease-out infinite;
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      border-radius: inherit;
+    }
+
+    .mask2 {
+      width: 50px;
+      height: 50px;
+      background: #673ff7;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      margin: 0 100px;
+    }
+
+    .mask2::before {
+      position: absolute;
+      content: '';
+      animation: scale 2s ease-out infinite;
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      border-radius: inherit;
+      animation-delay: 0.4s;
+    }
+
+    .mask3 {
+      width: 50px;
+      height: 50px;
+      background: #3fadf7;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+    }
+
+    .mask3::before {
+      position: absolute;
+      content: '';
+      animation: scale 2s ease-out infinite;
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      border-radius: inherit;
+      animation-delay: 0.8s;
+    }
+
+    @keyframes scale {
+      0% {
+        width: 50px;
+        height: 50px;
+        background: rgb(119, 117, 243);
+        opacity: 0.75;
+      }
+
+      50% {
+        opacity: 0.3;
+      }
+
+      100% {
+        width: 150px;
+        height: 150px;
+        background: red;
+        opacity: 0;
+      }
+    }
+
+  </style>
+</head>
+<body>
+    <div class="page">
+      <div class="mask1"></div>
+      <div class="mask2"></div>
+      <div class="mask3"></div>
+    </div>
+</body>
+</html>

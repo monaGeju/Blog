@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>js交换数值</title>
+</head>
+<body>
+  <script>
+    // 方法一：加法
+    (function add () {
+      let a = 1, b = 99;
+      a = a + b // a = 100, b = 99
+      b = a - b // a = 100, b = 100 - 99 = 1
+      a = a - b // a = 100 - 1 = 99
+
+      console.log(`方法一：交换后：a=${a},b=${b}`)
+    })()
+
+    // 方法二：数组交换
+    +function arr () {
+      let a = 1, b = 99;
+
+      a = [1, 99]
+      b = a[0]
+      a = a[1]
+
+      console.log(`方法二：交换后：a=${a},b=${b}`)
+    }()
+
+    // 方法三：解构
+    -function spread () {
+      let a = 1 , b = 99;
+
+      [a, b] = [b, a]
+
+      console.log(`方法三：交换后：a=${a},b=${b}`)
+  
+    }()
+
+    // 方法四：第三个变量承接
+    !(function () {
+
+      var a = 1, b = 99, c;
+      
+      c = a;
+      a = b;
+      b = c;
+
+      console.log(`方法四：交换后：a=${a},b=${b}`)
+    }())
+  </script>
+</body>
+</html>
