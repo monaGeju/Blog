@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css 技巧</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    .page {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .target {
+      margin-right: 30px;
+    }
+
+    .target00 {
+      width: 0;
+      height: 0;
+      border-top: 100px solid rgb(151, 243, 109);
+      border-right: 100px solid transparent;
+    }
+
+    .target01 {
+      width: 0;
+      height: 0;
+      border-left: 100px solid rgb(151, 243, 109);
+      border-bottom: 100px solid transparent;
+    }
+
+    .target02 {
+      width: 0;
+      height: 0;
+      border-left: 100px solid rgb(151, 243, 109);
+      border-bottom: 50px solid transparent;
+    }
+
+    .target03 {
+      position: relative;
+      width: 0;
+      height: 0;
+      border-top: 9px solid transparent;
+      border-right: 9px solid red;
+      -webkit-transform: rotate(10deg);
+      -moz-transform: rotate(10deg);
+      -ms-transform: rotate(10deg);
+      -o-transform: rotate(10deg);
+    }
+    .target03:after {
+      content: "";
+      position: absolute;
+      border: 0 solid transparent;
+      border-top: 3px solid red;
+      border-radius: 20px 0 0 0;
+      top: -12px;
+      left: -9px;
+      width: 12px;
+      height: 12px;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="target target00"></div>
+    <div class="target target01"></div>
+    <div class="target target02"></div>
+    <div class="target target03"></div>
+  </div>
+</body>
+</html>

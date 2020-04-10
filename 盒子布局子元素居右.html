@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>父元素弹性布局，子元素自定义显示方式</title>
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    .parent {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .child {
+      width: 200px;
+      height: 200px;
+      border: 1px solid #4afccd;
+      margin-right: 50px;
+    }
+
+    .child4 {
+      /* align-self: flex-end; */
+      justify-self: self-end;
+    }
+
+
+  </style>
+</head>
+<body>
+    <div class="parent">
+      <div class="child child1"></div>
+      <div class="child child2"></div>
+      <div class="child child3"></div>
+      <div class="child child4"></div>
+    </div>
+</body>
+</html>

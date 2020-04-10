@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS圣杯布局</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .main {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: flex-start;
+    }
+
+    .left {
+      width: 200px;
+      height: 100vh;
+      background: red;
+      flex-grow: 0;
+      flex-shrink: 1;
+    }
+
+    .centerDiv {
+      height: 100vh;
+      flex-grow: 1;
+      background: greenyellow;
+      flex-shrink: 1;
+    }
+
+    .right {
+      width: 200px;
+      height: 100vh;
+      background: purple;
+      flex-grow: 0;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="left"></div>
+    <div class="centerDiv"></div>
+    <div class="right"></div>
+  </div>
+</body>
+</html>

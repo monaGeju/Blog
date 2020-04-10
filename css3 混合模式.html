@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS3 混合模式</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      background: #647585;
+    }
+    .main {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      align-content: center;
+    }
+
+    .img {
+      width: 200px;
+      background: #ead007;
+      object-fit: cover;
+    }
+
+    .img01 { /* 正片叠底，结果以背景色为主 */
+      mix-blend-mode: multiply; 
+    }
+
+    .img02 { /*滤镜效果 */
+      mix-blend-mode: screen;
+    }
+
+    .img03 { /* 叠加模式 */
+      mix-blend-mode: overlay;
+    }
+
+    .img04 { /* 变暗模式， 选择背景色与图片的暗色区 */
+      mix-blend-mode: darken;
+    }
+
+    .img05 { /* 变亮模式， 亮色被背景色替换，暗色保持不变 */
+      mix-blend-mode: lighten;
+    }
+
+    .img06 { /* 加亮背景色,加强曝光 */
+      mix-blend-mode: color-dodge;
+    }
+
+    .img07 { /* 加暗背景色,夜间模式 */
+      mix-blend-mode: color-burn;
+    }
+
+    .img08 { /* 强光模式 */
+      mix-blend-mode: hard-light;
+    }
+
+    .img09 { /* 柔光模式 */
+      mix-blend-mode: soft-light;
+    }
+
+    .img10 { /* 差值模式 */
+      mix-blend-mode: difference;
+    }
+
+    .img11 { /* 排除模式 */
+      mix-blend-mode: exclusion;
+    }
+
+    .img12 { /* 色相模式 */
+      mix-blend-mode: hue;
+    }
+
+    .img13 { /* 饱和度模式 */
+      mix-blend-mode: saturation;
+    }
+
+    .img14 { /* 颜色模式 */
+      mix-blend-mode: color;
+    }
+
+    .img15 { /* 亮度模式 */
+      mix-blend-mode: luminosity;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="wrap00">
+      <img class="img img00" src="https://bkimg.cdn.bcebos.com/pic/ac6eddc451da81cb2e810e555866d016082431c6?x-bce-process=image/resize,m_lfit,w_235,h_235,limit_1" alt="海南">
+    </div>
+    <div class="wrap01">
+      <img class="img img01" src="https://bkimg.cdn.bcebos.com/pic/ac6eddc451da81cb2e810e555866d016082431c6?x-bce-process=image/resize,m_lfit,w_235,h_235,limit_1" alt="海南">
+    </div>
+    <div class="wrap02">
+      <img class="img img02" src="https://bkimg.cdn.bcebos.com/pic/ac6eddc451da81cb2e810e555866d016082431c6?x-bce-process=image/resize,m_lfit,w_235,h_235,limit_1" alt="海南">
+    </div>
+    <div class="wrap03">
+      <img class="img img03" src="https://bkimg.cdn.bcebos.com/pic/ac6eddc451da81cb2e810e555866d016082431c6?x-bce-process=image/resize,m_lfit,w_235,h_235,limit_1" alt="海南">
+    </div>
+    <div class="wrap04">
+      <img class="img img04" src="https://bkimg.cdn.bcebos.com/pic/ac6eddc451da81cb2e810e555866d016082431c6?x-bce-process=image/resize,m_lfit,w_235,h_235,limit_1" alt="海南">
+    </div>
+    <div class="wrap05">
+      <img class="img img05" src="https://bkimg.cdn.bcebos.com/pic/ac6eddc451da81cb2e810e555866d016082431c6?x-bce-process=image/resize,m_lfit,w_235,h_235,limit_1" alt="海南">
+    </div>
+    <div class="wrap06">
+      <img class="img img06" src="https://bkimg.cdn.bcebos.com/pic/ac6eddc451da81cb2e810e555866d016082431c6?x-bce-process=image/resize,m_lfit,w_235,h_235,limit_1" alt="海南">
+    </div>
+    <div class="wrap07">
+      <img class="img img07" src="https://bkimg.cdn.bcebos.com/pic/ac6eddc451da81cb2e810e555866d016082431c6?x-bce-process=image/resize,m_lfit,w_235,h_235,limit_1" alt="海南">
+    </div>
+    <div class="wrap08">
+      <img class="img img08" src="https://bkimg.cdn.bcebos.com/pic/ac6eddc451da81cb2e810e555866d016082431c6?x-bce-process=image/resize,m_lfit,w_235,h_235,limit_1" alt="海南">
+    </div>
+    <div class="wrap09">
+      <img class="img img09" src="https://bkimg.cdn.bcebos.com/pic/ac6eddc451da81cb2e810e555866d016082431c6?x-bce-process=image/resize,m_lfit,w_235,h_235,limit_1" alt="海南">
+    </div>
+    <div class="wrap10">
+      <img class="img img10" src="https://bkimg.cdn.bcebos.com/pic/ac6eddc451da81cb2e810e555866d016082431c6?x-bce-process=image/resize,m_lfit,w_235,h_235,limit_1" alt="海南">
+    </div>
+    <div class="wrap11">
+      <img class="img img11" src="https://bkimg.cdn.bcebos.com/pic/ac6eddc451da81cb2e810e555866d016082431c6?x-bce-process=image/resize,m_lfit,w_235,h_235,limit_1" alt="海南">
+    </div>
+    <div class="wrap12">
+      <img class="img img12" src="https://bkimg.cdn.bcebos.com/pic/ac6eddc451da81cb2e810e555866d016082431c6?x-bce-process=image/resize,m_lfit,w_235,h_235,limit_1" alt="海南">
+    </div>
+    <div class="wrap13">
+      <img class="img img13" src="https://bkimg.cdn.bcebos.com/pic/ac6eddc451da81cb2e810e555866d016082431c6?x-bce-process=image/resize,m_lfit,w_235,h_235,limit_1" alt="海南">
+    </div>
+    <div class="wrap14">
+      <img class="img img14" src="https://bkimg.cdn.bcebos.com/pic/ac6eddc451da81cb2e810e555866d016082431c6?x-bce-process=image/resize,m_lfit,w_235,h_235,limit_1" alt="海南">
+    </div>
+    <div class="wrap15">
+      <img class="img img15" src="https://bkimg.cdn.bcebos.com/pic/ac6eddc451da81cb2e810e555866d016082431c6?x-bce-process=image/resize,m_lfit,w_235,h_235,limit_1" alt="海南">
+    </div>
+  </div>
+</body>
+</html>
