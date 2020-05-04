@@ -1,0 +1,26 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: "楷体","楷体_GB2312";
+  font-size: 22px;
+  background: #72b4ffe0;
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+
+  .input {
+    width: 250px;
+    margin: 20px;
+  }
+
+  .mainContent {
+    min-width: 400px;
+
+    .listItem {
+      font-size: 26px;
+      font-weight: 600;
+    }
+  }
+}

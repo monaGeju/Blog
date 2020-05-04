@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family:"楷体","楷体_GB2312" !important;
+  font-size: 26px !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
