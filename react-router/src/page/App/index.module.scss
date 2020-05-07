@@ -1,0 +1,20 @@
+.page {
+  width: 100vw;
+  height: 100vh;
+  background: #dff4ffc0;
+
+  .leftNav {
+    border: 1px solid #ddd;
+    height: 100vh;
+    padding: 15px;
+  }
+
+  .rightMain {
+    height: 100vh;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+}
