@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>搜索框新闻轮播</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+    }
+    .wrap {
+      position: relative;
+      width: 500px;
+    }
+
+    #ipt, #btn {
+      outline: none;
+      line-height: 26px;
+      border-radius: 5px;
+      margin: 0;
+    }
+
+    #ipt {
+      width: 300px;
+      z-index: 2;
+    }
+  </style>
+  <style>
+    #notice{
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: red;
+      font-size: 16px;
+      height: 30px;
+      line-height: 30px;
+      padding-left: 5px;
+      z-index: 0;
+      cursor: text;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <input placeholder=""  id="ipt" />
+    <button id="btn">搜索一下</button>
+    <label id="notice">瑞幸咖啡今日停牌!没听说要撤店</label>
+  </div>
+
+  <script>
+    var inputTextArr = ['瑞幸咖啡今日停牌!没听说要撤店', '89岁老人成此次北京疫情年纪最大患者', '公安局领导成黑社会老大', '最后一条轮播']
+    var inputNum = 0
+    var ipt = document.getElementById('ipt')
+    var btn = document.getElementById('btn')
+    var notice = document.getElementById('notice')
+
+    // 输入框失焦
+    ipt.addEventListener('blur', function () {
+
+      if(!ipt.value) {
+
+        notice.style.display="inline-block"
+        ipt.placeholder=""
+      } else {
+
+        notice.style.display="none"
+      }
+    })
+
+    // 鼠标滑过输入框
+    ipt.addEventListener('mouseover', function () {
+
+      ipt.focus()
+
+      if(!ipt.value) {
+
+        notice.style.display="inline-block"
+      }
+    })
+
+    // 点击label
+    notice.addEventListener('click', function () {
+
+      ipt.focus()
+    })
+
+    // 点击btn搜索
+    btn.addEventListener('click', function () {
+
+      if(notice.style.display==="none") {
+
+        alert('正在搜索：'+ipt.value)
+      } else {
+
+        alert('正在搜索：'+inputTextArr[inputNum])
+      }
+
+    })
+
+    // 监听输入事件
+    ipt.oninput = function (e) {
+
+      if(e.target.value){
+
+        notice.style.display="none"
+        ipt.placeholder=""
+      } else {
+
+        notice.style.display="inline-block"
+        ipt.placeholder=""
+      }
+    }
+
+    // 控制轮播新闻
+    setInterval(function(){
+
+      if(inputNum === inputTextArr.length -1){
+
+        inputNum = 0
+      } else {
+
+        inputNum++
+      }
+
+      notice.innerText=inputTextArr[inputNum]
+    }, 2000)
+  </script>
+</body>
+</html>
