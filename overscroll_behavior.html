@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>overscroll-behavior</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    body{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; 
+      width: 100vw;
+      height: 100vh;
+    }
+    
+    .box{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      width: 61.8vw;
+      height: 61.8vh;
+      background-image: linear-gradient(#d9ff00, cyan);
+      overflow-y: scroll;
+    }
+
+    .child{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      width: 400px;
+      height: 120vh;
+      background-image: linear-gradient(#ffe600, #4c00ff);
+      overflow-y: scroll;
+    }
+
+    .item{
+      width: 300px;
+      height: 300vh;
+      border: 2px dashed lightpink;
+      background-image: linear-gradient(#00ff0d, #ff0062);
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="child">
+      <div class="item"></div>
+    </div>
+  </div>
+  <h3>overscroll-behavior-y: contain;</h3>
+</body>
+</html>
