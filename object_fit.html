@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+    .box{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      background: lightcyan;
+    }
+
+    .item{
+      position: relative;
+      width: 300px;
+      height: 500px;
+      border: 2px dashed lightpink;
+    }
+
+    .item img{
+      width: 300px;
+      height: 500px;
+    }
+
+    .img1{
+      object-fit: fill;
+    }
+
+    .img2{
+      object-fit: contain;
+    }
+
+    .img3{
+      object-fit: cover;
+    }
+
+    .img4{
+      object-fit: none;
+    }
+
+    .img5{
+      object-fit: scale-down;
+    }
+
+    .desc{
+      color: lightseagreen;
+      line-height: 32px;
+      text-align: justify;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="item item1">
+      <img class="img1" src="https://view.didistatic.com/static/dcms/jc4w21dn2kx8rfsjg_750x700.png" alt="">
+      <div class="desc">
+        fill: 默认，不保证保持原有的比例，内容拉伸填充整个内容容器
+      </div>
+    </div>
+    <div class="item item2">
+      <img class="img2" src="https://view.didistatic.com/static/dcms/jc4w21dn2kx8rfsjg_750x700.png" alt="">
+      <div class="desc">
+        contain: 保持原有尺寸比例。内容被缩放
+      </div>
+    </div>
+    <div class="item item3">
+      <img class="img3" src="https://view.didistatic.com/static/dcms/jc4w21dn2kx8rfsjg_750x700.png" alt="">
+      <div class="desc">
+        cover: 保持原有尺寸比例。但部分内容可能被剪切
+      </div>
+    </div>
+    <div class="item item4">
+      <img class="img4" src="https://view.didistatic.com/static/dcms/jc4w21dn2kx8rfsjg_750x700.png" alt="">
+      <div class="desc">
+        none: 保留原有元素内容的长度和宽度
+      </div>
+    </div>
+    <div class="item item5">
+      <img class="img5" src="https://view.didistatic.com/static/dcms/jc4w21dn2kx8rfsjg_750x700.png" alt="">
+      <div class="desc">
+        scale-down: 保持原有尺寸比例。内容的尺寸与 none 或 contain 中的一个相同，取决于它们两个之间谁得到的对象尺寸会更小一些
+      </div>
+    </div>
+  </div>
+</body>
+</html>
